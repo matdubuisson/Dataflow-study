@@ -1,0 +1,12 @@
+Mozart Compiler unknown () playing Oz 3
+
+%%% feeding file server.oz
+
+%*************************** parse error ************************
+%**
+%** expected '!'
+%**
+%** (other candidates: character, integer, atom, variable, float, string, '_', '$', 'self', 'fail' or one of 23 others)
+%** in file "server.oz", line 10, column 5
+%** file "server.oz", line 1, column 1: inside functor definition
+%** ------------------ rejected (1 error)
