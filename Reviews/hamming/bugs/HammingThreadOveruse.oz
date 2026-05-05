@@ -13,9 +13,7 @@ define
     end
 
     fun lazy {Times L N}
-        case L of H|T then
-            H*N|{Times T N}
-        end
+        thread L.1 * N end|{Times thread L.2 end N}
     end
 
     fun lazy {Merge L0 L1}
@@ -43,13 +41,7 @@ define
 in
     {Browser.browse s1(S1)}
     {Browser.browse s2(S2)}
-    {Browser.browse s3(S3)}
-    {Browser.browse s4(S4)}
-    {Browser.browse S}
-    S1 = {GenerateIncrementalStream}
+    S1 = _ % {GenerateIncrementalStream}
     S2 = {Times S1 2}
-    S3 = {Times S1 3}
-    S4 = {Times S1 5}
-    S = {Merge S2 {Merge S3 S4}}
-    {Touch S 20}
+    {Touch S2 10}
 end

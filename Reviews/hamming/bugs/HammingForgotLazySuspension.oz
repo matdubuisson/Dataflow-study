@@ -12,7 +12,7 @@ define
         {Aux 0}
     end
 
-    fun lazy {Times L N}
+    fun {Times L N}
         case L of H|T then
             H*N|{Times T N}
         end
