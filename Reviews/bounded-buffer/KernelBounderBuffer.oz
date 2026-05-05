@@ -67,11 +67,10 @@ define
         end
 
         proc {Loop InStream InStreamOffset ?OutStream}
-            % Where &InStreamOffset[0] == &InStream[MaxSize]
             thread
                 {WaitNeeded OutStream}
                 local NewInStreamOffset in
-                    % {Wait InStream} No need to wait already there thanks to InStreamOffset
+                    {Wait InStream}
 
                     thread
                         {Wait InStreamOffset}
